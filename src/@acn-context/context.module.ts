@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { EngeCommonLibModule } from '@enge/common-lib';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { PasswordModule } from 'primeng/password';
 
 import { AcnContextAutocompleteService } from './service/context-auto-complete.service';
 
@@ -15,7 +17,9 @@ import { AcnCompetitorResolver } from './resolvers/competitor.resolver';
 @NgModule({
 	imports: [ 
 		EngeCommonLibModule,
-		
+		RadioButtonModule,
+		PasswordModule,
+
 	],
 	declarations: [
 		AcnCompetitorListLoaderComponent,

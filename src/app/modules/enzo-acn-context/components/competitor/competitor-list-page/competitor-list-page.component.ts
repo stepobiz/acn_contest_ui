@@ -38,7 +38,7 @@ export class EnzoCompetitorListPageComponent {
 	};
 	competitorCount: number;
 
-	competitorListDc = ['_ck', 'id'];
+	competitorListDc = ['_ck', 'id', 'username', 'telegram', 'group'];
 	paginatorEvent(paginator: any) {
 		let competitorListPaginator = { ...paginator }
 		this.competitorListPaginator = competitorListPaginator;

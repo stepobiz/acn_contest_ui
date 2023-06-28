@@ -34,14 +34,14 @@ export class AcnCompetitorNewUpdateFormComponent extends EngeLibGenericForm {
 		this.output = this.competitorOutput;
 	}
 
-
 	override loadForm(): void {
 		this._newUpdateForm = this._formBuilder.group({
 			id: [null],
 			username: [null, [ Validators.required,  ]],
 			password: [null, [ Validators.required,  ]],
+			password2: [null, [ Validators.required,  ]],
 			telegram: [null, [  ]],
-			email: [null, [  ]],
+			email: [null, [ Validators.email ]],
 			group: [null, [ Validators.required,  ]],
 			sQuizValutation: [null, [ Validators.required,  ]],
 		});
@@ -56,6 +56,7 @@ export class AcnCompetitorNewUpdateFormComponent extends EngeLibGenericForm {
 	}
 
 	override async sendToBackEnd(request: AcnCompetitorDto) {
+		console.log(request);
 		try {
 			let postOrPut: string;
 			if (request.id != null && request.id > 0) {

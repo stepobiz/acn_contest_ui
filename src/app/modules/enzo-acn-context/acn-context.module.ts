@@ -26,8 +26,8 @@ import { EnzoCompetitorDialogComponent } from './components/competitor/competito
 	providers: [
 		{
 			provide: ACN_CONTEXT_ENDPOINT,
-			//useValue: 'http://localhost:3000/acn/context'
-			useValue: 'https://acn.stepo.biz/back_contest/acn/context'
+			useValue: 'http://localhost:3001/acn/context'
+			//useValue: 'https://acn.stepo.biz/back_contest/acn/context'
 		}
 	]
 })

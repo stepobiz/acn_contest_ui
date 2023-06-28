@@ -2,47 +2,99 @@
 	<form [formGroup]="_newUpdateForm" (ngSubmit)="submit()">
 		<div class="grid p-fluid" style="margin-top: 0px;">
 
+			<h1>Piattaforma di scambio informazioni concorsisti ACN 60 diplomati</h1>
+			<p>
+				Questa piattaforma è stata creata per lo scambio di informazioni tra i concorsisti del concorso pubblico
+				ACN 60 diplomati.
+				Questa pagina è il form di regitrazione alla piattaforma, <b>registrati solo se hai partecipato al
+					concorso!</b>
+				Tutti i dati in merito a proiezioni e graduatorie verranno condivisi, pertanto se non si vogliono
+				condividere vi prego di non registrarvi.
+				Per nessun motivo verranno mai usati i contatti per scopi economici, ma solo per trasmettere notifiche
+				nell'ambito di questa piattaforma.
+				Questa nota vale come informativa sulla privacy dei dati trattati dalla presente piattaforma.
+				Registrandoti accetti queste condizioni ed eventuali suoi aggiornamenti.
+			</p>
+
+			<hr>
+
+			<h2>Informazioni sul tuo concorso.</h2>
+
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'username' }}</span><span class="filed-required">*</span>
+				<span>{{ 'Gruppo del concorso:' }}</span><span class="filed-required">*</span>
+				<br>
+				<label><p-radioButton value="A" formControlName="group"></p-radioButton> A  </label>|
+				<label><p-radioButton value="B" formControlName="group"></p-radioButton> B  </label>|
+				<label><p-radioButton value="C" formControlName="group"></p-radioButton> C  </label>|
+				<label><p-radioButton value="D" formControlName="group"></p-radioButton> D  </label>|
+				<label><p-radioButton value="E" formControlName="group"></p-radioButton> E  </label>|
+				<label><p-radioButton value="F" formControlName="group"></p-radioButton> F  </label>|
+				<label><p-radioButton value="G" formControlName="group"></p-radioButton> G  </label>
+			</div>
+			<br>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'Voto calcolato in autonomia dalle tracce.' }}</span><span class="filed-required">*</span>
+				<code>Se non l'hai calcolato inserisci 0</code>
+				<input type="text" pInputText formControlName="sQuizValutation" value="0">
+				<div *ngIf="!isValid(_newUpdateForm.controls['sQuizValutation'])" class="filed-required">
+					<span *ngIf="checkControlError(_newUpdateForm.controls['sQuizValutation'], 'required')">La
+						sQuizValutation è richiesta.</span>
+				</div>
+			</div>
+
+			<hr>
+
+			<h2>Dati per poter riaccedere ai dati inseriti e vedere i dati degli altri.</h2>
+
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'Nome utente' }}</span><span class="filed-required">*</span>
 				<input type="text" pInputText formControlName="username" placeholder="Username">
 				<div *ngIf="!isValid(_newUpdateForm.controls['username'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['username'], 'required')">La username è richiesta.</span>
+					<span *ngIf="checkControlError(_newUpdateForm.controls['username'], 'required')">La username è
+						richiesta.</span>
 				</div>
 			</div>
+			<br>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'password' }}</span><span class="filed-required">*</span>
-				<input type="text" pInputText formControlName="password" placeholder="Password">
+				<span>{{ 'Password' }}</span><span class="filed-required">*</span>
+				<p-password formControlName="password" placeholder="Password" [toggleMask]="true"></p-password>
 				<div *ngIf="!isValid(_newUpdateForm.controls['password'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['password'], 'required')">La password è richiesta.</span>
+					<span *ngIf="checkControlError(_newUpdateForm.controls['password'], 'required')">La password è
+						richiesta.</span>
 				</div>
 			</div>
+			<br>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'telegram' }}</span>
-				<input type="text" pInputText formControlName="telegram" placeholder="Telegram">
-			</div>
-			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'email' }}</span>
-				<input type="text" pInputText formControlName="email" placeholder="Email">
-			</div>
-			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'group' }}</span><span class="filed-required">*</span>
-				<input type="text" pInputText formControlName="group" placeholder="Group">
-				<div *ngIf="!isValid(_newUpdateForm.controls['group'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['group'], 'required')">La group è richiesta.</span>
+				<span>{{ 'Verifica Password' }}</span><span class="filed-required">*</span>
+				<p-password formControlName="password2" placeholder="Password" [toggleMask]="true"></p-password>
+				<div *ngIf="!isValid(_newUpdateForm.controls['password'])" class="filed-required">
+					<span *ngIf="checkControlError(_newUpdateForm.controls['password'], 'required')">La password è
+						richiesta.</span>
 				</div>
 			</div>
+
+			<hr>
+
+			<h2>Rimaniamo in contatto (non obbligatorio)</h2>
+
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'sQuizValutation' }}</span><span class="filed-required">*</span>
-				<input type="text" pInputText formControlName="sQuizValutation" placeholder="SQuizValutation">
-				<div *ngIf="!isValid(_newUpdateForm.controls['sQuizValutation'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['sQuizValutation'], 'required')">La sQuizValutation è richiesta.</span>
-				</div>
+				<span>{{ 'Telegram username' }}</span>|
+				<code><a target="_blank" href="https://www.wikihow.com/Know-Chat-ID-on-Telegram-on-Android">Come travre proprio user telegram</a></code>
+				<input type="text" pInputText formControlName="username" placeholder="Telegram">
 			</div>
+			<br>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'Indirizzo email' }}</span>
+				<input type="emai" pInputText formControlName="email" placeholder="Email">
+			</div>
+
+			<hr>
 
 			<div class="col-12 md:col-6 lg:col-3">
 				<br>
 				<button pButton *ngIf="!_isUpdate" type="submit" color="accent">{{ 'Crea' }}</button>
-				<button pButton class="p-button-outlined"  *ngIf="_isUpdate" type="submit" color="accent">{{ 'Aggiorna' }}</button>
+				<button pButton class="p-button-outlined" *ngIf="_isUpdate" type="submit" color="accent">{{ 'Aggiorna'
+					}}</button>
 			</div>
 
 		</div>
