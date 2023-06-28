@@ -1,0 +1,11 @@
+<div class="grid">
+    <div class="col-12 lg:col-6 xl:col-6">
+        <div class="card mb-0">
+			<acn-competitor-detail-box [competitor]="competitorDto"></acn-competitor-detail-box>
+			<button pButton pRipple type="button" label="Modifica" class="p-button-outlined p-button-secondary" (click)="editCompetitor(competitorDto)"></button>
+			<button pButton pRipple type="button" label="Cancella" class="p-button-outlined p-button-danger" (click)="deleteCompetitor(competitorDto)"></button>
+		</div>
+	</div>
+
+
+</div>

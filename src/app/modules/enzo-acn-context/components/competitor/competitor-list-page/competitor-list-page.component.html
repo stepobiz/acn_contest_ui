@@ -1,0 +1,12 @@
+<div class="card mb-0 relative">
+	
+	<acn-competitor-list-loader 
+		[dcs]="competitorListDc" [buttons]="tableButtons" 
+		[paginator]="competitorListPaginator" (resultCount)="competitorCount=$event"> 
+	</acn-competitor-list-loader>
+
+	<stal-paginator [totalRecords]="competitorCount" [(pageable)]="competitorListPaginator"></stal-paginator>
+
+	<button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded create-button" (click)="createNewCompetitor()"></button>
+
+</div>

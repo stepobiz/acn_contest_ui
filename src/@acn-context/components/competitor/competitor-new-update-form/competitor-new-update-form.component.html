@@ -1,0 +1,70 @@
+<div id="acn-competitor-new-update-form" *ngIf="stepIs(formStep.FORM)">
+	<form [formGroup]="_newUpdateForm" (ngSubmit)="submit()">
+		<div class="grid p-fluid" style="margin-top: 0px;">
+
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'username' }}</span><span class="filed-required">*</span>
+				<input type="text" pInputText formControlName="username" placeholder="Username">
+				<div *ngIf="!isValid(_newUpdateForm.controls['username'])" class="filed-required">
+					<span *ngIf="checkControlError(_newUpdateForm.controls['username'], 'required')">La username è richiesta.</span>
+				</div>
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'password' }}</span><span class="filed-required">*</span>
+				<input type="text" pInputText formControlName="password" placeholder="Password">
+				<div *ngIf="!isValid(_newUpdateForm.controls['password'])" class="filed-required">
+					<span *ngIf="checkControlError(_newUpdateForm.controls['password'], 'required')">La password è richiesta.</span>
+				</div>
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'telegram' }}</span>
+				<input type="text" pInputText formControlName="telegram" placeholder="Telegram">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'email' }}</span>
+				<input type="text" pInputText formControlName="email" placeholder="Email">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'group' }}</span><span class="filed-required">*</span>
+				<input type="text" pInputText formControlName="group" placeholder="Group">
+				<div *ngIf="!isValid(_newUpdateForm.controls['group'])" class="filed-required">
+					<span *ngIf="checkControlError(_newUpdateForm.controls['group'], 'required')">La group è richiesta.</span>
+				</div>
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'sQuizValutation' }}</span><span class="filed-required">*</span>
+				<input type="text" pInputText formControlName="sQuizValutation" placeholder="SQuizValutation">
+				<div *ngIf="!isValid(_newUpdateForm.controls['sQuizValutation'])" class="filed-required">
+					<span *ngIf="checkControlError(_newUpdateForm.controls['sQuizValutation'], 'required')">La sQuizValutation è richiesta.</span>
+				</div>
+			</div>
+
+			<div class="col-12 md:col-6 lg:col-3">
+				<br>
+				<button pButton *ngIf="!_isUpdate" type="submit" color="accent">{{ 'Crea' }}</button>
+				<button pButton class="p-button-outlined"  *ngIf="_isUpdate" type="submit" color="accent">{{ 'Aggiorna' }}</button>
+			</div>
+
+		</div>
+	</form>
+</div>
+
+<div *ngIf="stepIs(formStep.LOADING)" fxLayoutAlign="center">
+	loading
+</div>
+
+<div *ngIf="stepIs(formStep.COMPLETE)">
+	<h1 *ngIf="!_isUpdate">{{ 'competitor' }} {{ 'creato' }}</h1>
+	<h1 *ngIf="_isUpdate">{{ 'competitor' }} {{ 'aggiornato' }}</h1>
+
+	<hr>
+
+	<acn-competitor-detail-box [competitor]="_result"></acn-competitor-detail-box>
+
+	<div *ngIf="!_isUpdate">
+		<button pButton color="primary" (click)="newCompetitor()">
+			<span *ngIf="!returnToParent">{{ 'Crea nuovo' }}</span>
+			<span *ngIf="returnToParent">{{ 'Modifica' }}</span>
+		</button>
+	</div>
+</div>

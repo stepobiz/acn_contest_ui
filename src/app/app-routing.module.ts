@@ -12,7 +12,7 @@ const routes: Routes = [
 				pathMatch: 'full',
 				redirectTo: 'notfound',
 			},
-			//{ path: 'work', loadChildren: () => import('./modules/enzo-mbs-work/mbs-work.module').then(m => m.EnzoMbsWorkModule) },
+			{ path: 'acn', loadChildren: () => import('./modules/enzo-acn-context/acn-context.module').then(m => m.EnzoAcnContextModule) },
 		]
 	},
 	//    { path: 'notfound', component: NotfoundComponent },
