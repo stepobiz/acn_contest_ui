@@ -1,9 +1,15 @@
 <ng-container *ngIf="competitor">
 	<div class="h4 ml-16">ID: <b>{{ competitor.id }}</b></div>
+	<div class="h4 ml-16">active: <b>{{ competitor.active }}</b></div>
+	<div class="h4 ml-16">telegramId: <b>{{ competitor.telegramId }}</b></div>
+	<div class="h4 ml-16">telegramFirstName: <b>{{ competitor.telegramFirstName }}</b></div>
+	<div class="h4 ml-16">telegramLastName: <b>{{ competitor.telegramLastName }}</b></div>
 	<div class="h4 ml-16">username: <b>{{ competitor.username }}</b></div>
 	<div class="h4 ml-16">password: <b>{{ competitor.password }}</b></div>
-	<div class="h4 ml-16">telegram: <b>{{ competitor.telegram }}</b></div>
+	<div class="h4 ml-16">idToken: <b>{{ competitor.idToken }}</b></div>
+	<div class="h4 ml-16">accessToken: <b>{{ competitor.accessToken }}</b></div>
+	<div class="h4 ml-16">refreshToken: <b>{{ competitor.refreshToken }}</b></div>
 	<div class="h4 ml-16">email: <b>{{ competitor.email }}</b></div>
-	<div class="h4 ml-16">group: <b>{{ competitor.group }}</b></div>
+	<div class="h4 ml-16">contextGroup: <b>{{ competitor.contextGroup }}</b></div>
 	<div class="h4 ml-16">sQuizValutation: <b>{{ competitor.sQuizValutation }}</b></div>
 </ng-container>

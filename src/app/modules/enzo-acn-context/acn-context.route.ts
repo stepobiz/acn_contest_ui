@@ -9,7 +9,7 @@ export const enzoAcnContextRoutes: Route[] = [
 	{
 		path: '', 
 		pathMatch : 'full',
-		redirectTo: 'competitor'
+		redirectTo: 'page'
 	},
 	{
 		path: 'competitor',

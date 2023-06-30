@@ -23,13 +23,13 @@
 			<div class="col-12 md:col-6 lg:col-4">
 				<span>{{ 'Gruppo del concorso:' }}</span><span class="filed-required">*</span>
 				<br>
-				<label><p-radioButton value="A" formControlName="group"></p-radioButton> A  </label>|
-				<label><p-radioButton value="B" formControlName="group"></p-radioButton> B  </label>|
-				<label><p-radioButton value="C" formControlName="group"></p-radioButton> C  </label>|
-				<label><p-radioButton value="D" formControlName="group"></p-radioButton> D  </label>|
-				<label><p-radioButton value="E" formControlName="group"></p-radioButton> E  </label>|
-				<label><p-radioButton value="F" formControlName="group"></p-radioButton> F  </label>|
-				<label><p-radioButton value="G" formControlName="group"></p-radioButton> G  </label>
+				<label><p-radioButton value="A" formControlName="contextGroup"></p-radioButton> A  </label>|
+				<label><p-radioButton value="B" formControlName="contextGroup"></p-radioButton> B  </label>|
+				<label><p-radioButton value="C" formControlName="contextGroup"></p-radioButton> C  </label>|
+				<label><p-radioButton value="D" formControlName="contextGroup"></p-radioButton> D  </label>|
+				<label><p-radioButton value="E" formControlName="contextGroup"></p-radioButton> E  </label>|
+				<label><p-radioButton value="F" formControlName="contextGroup"></p-radioButton> F  </label>|
+				<label><p-radioButton value="G" formControlName="contextGroup"></p-radioButton> G  </label>
 			</div>
 			<br>
 			<div class="col-12 md:col-6 lg:col-4">
@@ -47,16 +47,29 @@
 			<h2>Dati per poter riaccedere ai dati inseriti e vedere i dati degli altri.</h2>
 
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'Nome utente' }}</span><span class="filed-required">*</span>
+				<label for="active">{{ 'active' }}</label>
+				<input type="checkbox" formControlName="active" inputId="active" />
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'telegramId' }}</span>
+				<code><a target="_blank" href="https://www.wikihow.com/Know-Chat-ID-on-Telegram-on-Android">Come travre proprio user telegram</a></code>
+				<input type="number" pInputText formControlName="telegramId" placeholder="TelegramId">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'telegramFirstName' }}</span>
+				<input type="text" pInputText formControlName="telegramFirstName" placeholder="TelegramFirstName">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'telegramLastName' }}</span>
+				<input type="text" pInputText formControlName="telegramLastName" placeholder="TelegramLastName">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'username' }}</span>
 				<input type="text" pInputText formControlName="username" placeholder="Username">
-				<div *ngIf="!isValid(_newUpdateForm.controls['username'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['username'], 'required')">La username è
-						richiesta.</span>
-				</div>
 			</div>
 			<br>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'Password' }}</span><span class="filed-required">*</span>
+				<span>{{ 'Password' }}</span>
 				<p-password formControlName="password" placeholder="Password" [toggleMask]="true"></p-password>
 				<div *ngIf="!isValid(_newUpdateForm.controls['password'])" class="filed-required">
 					<span *ngIf="checkControlError(_newUpdateForm.controls['password'], 'required')">La password è
@@ -72,20 +85,31 @@
 						richiesta.</span>
 				</div>
 			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'idToken' }}</span>
+				<input type="text" pInputText formControlName="idToken" placeholder="IdToken">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'accessToken' }}</span>
+				<input type="text" pInputText formControlName="accessToken" placeholder="AccessToken">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'refreshToken' }}</span>
+				<input type="text" pInputText formControlName="refreshToken" placeholder="RefreshToken">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'email' }}</span>
+				<input type="text" pInputText formControlName="email" placeholder="Email">
+			</div>
 
 			<hr>
 
 			<h2>Rimaniamo in contatto (non obbligatorio)</h2>
 
-			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'Telegram username' }}</span>|
-				<code><a target="_blank" href="https://www.wikihow.com/Know-Chat-ID-on-Telegram-on-Android">Come travre proprio user telegram</a></code>
-				<input type="text" pInputText formControlName="username" placeholder="Telegram">
-			</div>
 			<br>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'Indirizzo email' }}</span>
-				<input type="emai" pInputText formControlName="email" placeholder="Email">
+				<span>{{ 'sQuizValutation' }}</span>
+				<input type="text" pInputText formControlName="sQuizValutation" placeholder="SQuizValutation">
 			</div>
 
 			<hr>
@@ -93,8 +117,9 @@
 			<div class="col-12 md:col-6 lg:col-3">
 				<br>
 				<button pButton *ngIf="!_isUpdate" type="submit" color="accent">{{ 'Crea' }}</button>
-				<button pButton class="p-button-outlined" *ngIf="_isUpdate" type="submit" color="accent">{{ 'Aggiorna'
-					}}</button>
+				<button pButton class="p-button-outlined" *ngIf="_isUpdate" type="submit" color="accent">
+					{{ 'Aggiorna' }}
+				</button>
 			</div>
 
 		</div>
