@@ -14,11 +14,17 @@
 					<ng-container *ngFor="let dc of dcs" [ngSwitch]="dc">
 						<th *ngSwitchCase="'_ck'" style="width:30px"></th>
 						<th *ngSwitchCase="'id'" style="text-align:center; width: 50px" pResizableColumn pSortableColumn="id">id</th>
+						<th *ngSwitchCase="'active'" style="width:auto" pResizableColumn pSortableColumn="active"> active </th>
+						<th *ngSwitchCase="'telegramId'" style="width:auto" pResizableColumn pSortableColumn="telegramId"> telegramId </th>
+						<th *ngSwitchCase="'telegramFirstName'" style="width:auto" pResizableColumn pSortableColumn="telegramFirstName"> telegramFirstName </th>
+						<th *ngSwitchCase="'telegramLastName'" style="width:auto" pResizableColumn pSortableColumn="telegramLastName"> telegramLastName </th>
 						<th *ngSwitchCase="'username'" style="width:auto" pResizableColumn pSortableColumn="username"> username </th>
 						<th *ngSwitchCase="'password'" style="width:auto" pResizableColumn pSortableColumn="password"> password </th>
-						<th *ngSwitchCase="'telegram'" style="width:auto" pResizableColumn pSortableColumn="telegram"> telegram </th>
+						<th *ngSwitchCase="'idToken'" style="width:auto" pResizableColumn pSortableColumn="idToken"> idToken </th>
+						<th *ngSwitchCase="'accessToken'" style="width:auto" pResizableColumn pSortableColumn="accessToken"> accessToken </th>
+						<th *ngSwitchCase="'refreshToken'" style="width:auto" pResizableColumn pSortableColumn="refreshToken"> refreshToken </th>
 						<th *ngSwitchCase="'email'" style="width:auto" pResizableColumn pSortableColumn="email"> email </th>
-						<th *ngSwitchCase="'group'" style="width:auto" pResizableColumn pSortableColumn="group"> group </th>
+						<th *ngSwitchCase="'contextGroup'" style="width:auto" pResizableColumn pSortableColumn="contextGroup"> contextGroup </th>
 						<th *ngSwitchCase="'sQuizValutation'" style="width:auto" pResizableColumn pSortableColumn="sQuizValutation"> sQuizValutation </th>
 					</ng-container>
 					<th *ngIf="buttons" style="width:150px"></th>
@@ -29,11 +35,17 @@
 					<ng-container *ngFor="let dc of dcs" [ngSwitch]="dc">
 						<td *ngSwitchCase="'_ck'"><p-tableCheckbox [value]="e"></p-tableCheckbox></td>
 						<td *ngSwitchCase="'id'">{{ e.id }}</td>
+						<td *ngSwitchCase="'active'">{{ e.active }}</td>
+						<td *ngSwitchCase="'telegramId'">{{ e.telegramId }}</td>
+						<td *ngSwitchCase="'telegramFirstName'">{{ e.telegramFirstName }}</td>
+						<td *ngSwitchCase="'telegramLastName'">{{ e.telegramLastName }}</td>
 						<td *ngSwitchCase="'username'">{{ e.username }}</td>
 						<td *ngSwitchCase="'password'">{{ e.password }}</td>
-						<td *ngSwitchCase="'telegram'">{{ e.telegram }}</td>
+						<td *ngSwitchCase="'idToken'">{{ e.idToken }}</td>
+						<td *ngSwitchCase="'accessToken'">{{ e.accessToken }}</td>
+						<td *ngSwitchCase="'refreshToken'">{{ e.refreshToken }}</td>
 						<td *ngSwitchCase="'email'">{{ e.email }}</td>
-						<td *ngSwitchCase="'group'">{{ e.group }}</td>
+						<td *ngSwitchCase="'contextGroup'">{{ e.contextGroup }}</td>
 						<td *ngSwitchCase="'sQuizValutation'">{{ e.sQuizValutation }}</td>
 					</ng-container>
 					<td *ngIf="buttons" style="text-align:center">

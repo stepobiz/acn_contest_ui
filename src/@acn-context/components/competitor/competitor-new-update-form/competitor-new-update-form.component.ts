@@ -38,12 +38,18 @@ export class AcnCompetitorNewUpdateFormComponent extends EngeLibGenericForm {
 	override loadForm(): void {
 		this._newUpdateForm = this._formBuilder.group({
 			id: [null],
-			username: [null, [ Validators.required,  ]],
-			password: [null, [ Validators.required,  ]],
-			telegram: [null, [  ]],
+			active: [false, [  ]],
+			telegramId: [null, [  ]],
+			telegramFirstName: [null, [  ]],
+			telegramLastName: [null, [  ]],
+			username: [null, [  ]],
+			password: [null, [  ]],
+			idToken: [null, [  ]],
+			accessToken: [null, [  ]],
+			refreshToken: [null, [  ]],
 			email: [null, [  ]],
-			group: [null, [ Validators.required,  ]],
-			sQuizValutation: [null, [ Validators.required,  ]],
+			contextGroup: [null, [  ]],
+			sQuizValutation: [null, [  ]],
 		});
 
 	}
@@ -51,6 +57,7 @@ export class AcnCompetitorNewUpdateFormComponent extends EngeLibGenericForm {
 	override prepareResult(): AcnCompetitorDto {
 		let result: AcnCompetitorDto = this._newUpdateForm.value;
 		{
+			result.telegramId = (result.telegramId != null) ? +result.telegramId : null;
 		}
 		return result;
 	}

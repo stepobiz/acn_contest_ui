@@ -3,40 +3,52 @@
 		<div class="grid p-fluid" style="margin-top: 0px;">
 
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'username' }}</span><span class="filed-required">*</span>
+				<label for="active">{{ 'active' }}</label>
+				<input type="checkbox" formControlName="active" inputId="active" />
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'telegramId' }}</span>
+				<input type="number" pInputText formControlName="telegramId" placeholder="TelegramId">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'telegramFirstName' }}</span>
+				<input type="text" pInputText formControlName="telegramFirstName" placeholder="TelegramFirstName">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'telegramLastName' }}</span>
+				<input type="text" pInputText formControlName="telegramLastName" placeholder="TelegramLastName">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'username' }}</span>
 				<input type="text" pInputText formControlName="username" placeholder="Username">
-				<div *ngIf="!isValid(_newUpdateForm.controls['username'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['username'], 'required')">La username è richiesta.</span>
-				</div>
 			</div>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'password' }}</span><span class="filed-required">*</span>
+				<span>{{ 'password' }}</span>
 				<input type="text" pInputText formControlName="password" placeholder="Password">
-				<div *ngIf="!isValid(_newUpdateForm.controls['password'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['password'], 'required')">La password è richiesta.</span>
-				</div>
 			</div>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'telegram' }}</span>
-				<input type="text" pInputText formControlName="telegram" placeholder="Telegram">
+				<span>{{ 'idToken' }}</span>
+				<input type="text" pInputText formControlName="idToken" placeholder="IdToken">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'accessToken' }}</span>
+				<input type="text" pInputText formControlName="accessToken" placeholder="AccessToken">
+			</div>
+			<div class="col-12 md:col-6 lg:col-4">
+				<span>{{ 'refreshToken' }}</span>
+				<input type="text" pInputText formControlName="refreshToken" placeholder="RefreshToken">
 			</div>
 			<div class="col-12 md:col-6 lg:col-4">
 				<span>{{ 'email' }}</span>
 				<input type="text" pInputText formControlName="email" placeholder="Email">
 			</div>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'group' }}</span><span class="filed-required">*</span>
-				<input type="text" pInputText formControlName="group" placeholder="Group">
-				<div *ngIf="!isValid(_newUpdateForm.controls['group'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['group'], 'required')">La group è richiesta.</span>
-				</div>
+				<span>{{ 'contextGroup' }}</span>
+				<input type="text" pInputText formControlName="contextGroup" placeholder="ContextGroup">
 			</div>
 			<div class="col-12 md:col-6 lg:col-4">
-				<span>{{ 'sQuizValutation' }}</span><span class="filed-required">*</span>
+				<span>{{ 'sQuizValutation' }}</span>
 				<input type="text" pInputText formControlName="sQuizValutation" placeholder="SQuizValutation">
-				<div *ngIf="!isValid(_newUpdateForm.controls['sQuizValutation'])" class="filed-required">
-					<span *ngIf="checkControlError(_newUpdateForm.controls['sQuizValutation'], 'required')">La sQuizValutation è richiesta.</span>
-				</div>
 			</div>
 
 			<div class="col-12 md:col-6 lg:col-3">
