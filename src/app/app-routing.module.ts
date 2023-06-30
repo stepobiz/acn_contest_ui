@@ -10,7 +10,7 @@ const routes: Routes = [
 			{
 				path: '',
 				pathMatch: 'full',
-				redirectTo: 'notfound',
+				redirectTo: 'acn',
 			},
 			{ path: 'acn', loadChildren: () => import('./modules/enzo-acn-context/acn-context.module').then(m => m.EnzoAcnContextModule) },
 		]
