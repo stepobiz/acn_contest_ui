@@ -12,7 +12,7 @@ import { AcnCompetitorResourceService } from '@acn-context';
 import { EnzoCompetitorDialogComponent } from '../competitor-dialog/competitor-dialog.component';
 
 @Component({
-	templateUrl  : './competitor-list-page.component.html',
+	templateUrl: './competitor-list-page.component.html',
 	styleUrls: ['./competitor-list-page.component.scss']
 })
 export class EnzoCompetitorListPageComponent {
@@ -38,13 +38,13 @@ export class EnzoCompetitorListPageComponent {
 	};
 	competitorCount: number;
 
-	competitorListDc = ['_ck', 'id', 'username', 'telegram', 'group'];
+	competitorListDc = ['_ck', 'id', 'telegramId', 'telegramFirstName', 'telegramLastName', 'contextGroup', 'sQuizValutation'];
 	paginatorEvent(paginator: any) {
 		let competitorListPaginator = { ...paginator }
 		this.competitorListPaginator = competitorListPaginator;
 	}
 
-	exportButtons: any[] =  [
+	exportButtons: any[] = [
 		{
 			label: 'Pdf',
 			icon: 'pi pi-file-pdf', command: () => {
@@ -91,4 +91,5 @@ export class EnzoCompetitorListPageComponent {
 			]
 		}
 	]
+
 }
